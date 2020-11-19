@@ -1,6 +1,5 @@
 class Rotator:
     def rotate(self, array, steps):
         for i in range(steps):
-            element = array.pop(0)
-            array.append(element)
+            array.append(array.pop(0))
         return array
