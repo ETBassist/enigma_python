@@ -14,9 +14,7 @@ class KeyGenerator:
 
     def make_key(self, digits):
         result = []
-        result.append(digits[0] + digits[1])
-        result.append(digits[1] + digits[2])
-        result.append(digits[2] + digits[3])
-        result.append(digits[3] + digits[4])
+        for i in range(len(digits) - 1):
+            result.append(digits[i] + digits[i + 1])
         result = list(map(int, result))
         return result
