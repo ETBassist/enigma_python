@@ -11,7 +11,7 @@ class Enigma:
         cipher = self.key_gen.make_cipher(key, date)
         result = []
         for char_index, letter in enumerate(phrase):
-            alphabet = self.create_characters()
+            alphabet = self.__create_characters()
             if letter in alphabet:
                 index = alphabet.index(letter)
                 rotated_alpha = self.rotor.left_rotate(alphabet, cipher[char_index % 4])
@@ -24,7 +24,7 @@ class Enigma:
         cipher = self.key_gen.make_cipher(key, date)
         result = []
         for char_index, letter in enumerate(encrypted_phrase):
-            alphabet = self.create_characters()
+            alphabet = self.__create_characters()
             if letter in alphabet:
                 index = alphabet.index(letter)
                 rotated_alpha = self.rotor.right_rotate(alphabet, cipher[char_index % 4])
@@ -33,8 +33,7 @@ class Enigma:
                 result.append(letter)
         return ''.join(result)
 
-    @staticmethod
-    def create_characters():
+    def __create_characters(self):
         alphabet = list(string.ascii_lowercase)
         alphabet.append(' ')
         return alphabet
