@@ -1,7 +1,6 @@
-import pdb
 import string
-from rotator import *
-from key_generator import *
+from rotator import Rotator
+from key_generator import KeyGenerator
 
 class Enigma:
     def __init__(self):
