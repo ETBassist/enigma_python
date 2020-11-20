@@ -1,4 +1,9 @@
 class Rotator:
+    def rotate(self, array, steps, direction):
+        if direction == 'left':
+            return self.left_rotate(array, steps)
+        return self.right_rotate(array, steps)
+
     def left_rotate(self, array, steps):
         for i in range(steps):
             array.append(array.pop(0))
