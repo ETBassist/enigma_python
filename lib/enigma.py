@@ -15,7 +15,7 @@ class Enigma:
             alphabet.append(' ')
             if letter in alphabet:
                 index = alphabet.index(letter)
-                rotated_alpha = self.rotor.right_rotate(alphabet, cipher[char_index % 4])
+                rotated_alpha = self.rotor.left_rotate(alphabet, cipher[char_index % 4])
                 result.append(rotated_alpha[index])
             else:
                 result.append(letter)
@@ -29,7 +29,7 @@ class Enigma:
             alphabet.append(' ')
             if letter in alphabet:
                 index = alphabet.index(letter)
-                rotated_alpha = self.rotor.left_rotate(alphabet, cipher[char_index % 4])
+                rotated_alpha = self.rotor.right_rotate(alphabet, cipher[char_index % 4])
                 result.append(rotated_alpha[index])
             else:
                 result.append(letter)
