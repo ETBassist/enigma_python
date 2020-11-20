@@ -8,6 +8,7 @@ class Enigma:
         self.key_gen = KeyGenerator()
 
     def encrypt(self, phrase, key, date):
+        phrase = phrase.lower()
         cipher = self.key_gen.make_cipher(key, date)
         result = []
         for char_index, letter in enumerate(phrase):
@@ -21,6 +22,7 @@ class Enigma:
         return ''.join(result)
 
     def decrypt(self, encrypted_phrase, key, date):
+        encrypted_phrase = encrypted_phrase.lower()
         cipher = self.key_gen.make_cipher(key, date)
         result = []
         for char_index, letter in enumerate(encrypted_phrase):
